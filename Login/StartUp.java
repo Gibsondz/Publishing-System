@@ -1,4 +1,8 @@
+package Login;
+
 import java.util.Scanner;
+
+import Users.Operator;
 
 /**
  * basic main function used by all starting users.
@@ -39,7 +43,10 @@ public class StartUp {
 				else
 				{
 					System.out.println("Welcome " + user.getUsername());
-					//user.launch();
+					if(user.getType().equals("O"))
+					{
+						Operator operator = new Operator(user);
+					}
 					break;
 				}
 				
