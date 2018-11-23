@@ -66,4 +66,17 @@ public class Inventory implements Subject {
 		notifyAllObservers();
 	}
 
+	public int searchInventory(String docname){
+		for(int i = 0; i < inventory.size(); i++){
+			if(docname.equals(inventory.get(i).getTitle())){
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public ArrayList getInventory(){
+		return inventory;
+	}
+
 }
