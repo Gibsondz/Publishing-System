@@ -18,6 +18,7 @@ public class InventoryObserver implements Observer {
 		{
 			System.out.println(data.get(i));
 		}
+		System.out.println();
 	}
 	
 }
