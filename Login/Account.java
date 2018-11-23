@@ -1,3 +1,4 @@
+package Login;
 /**
  * Account class used to hold certain data for a user.
  * @author Gibson Dziwinski
