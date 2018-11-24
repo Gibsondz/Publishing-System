@@ -47,8 +47,8 @@ public class StartUp {
 					if(user.getType().equals("O"))
 					{
 						Operator operator = new Operator(user);
+						operator.run();
 					}
-					break;
 				}
 				
 			}
@@ -63,7 +63,6 @@ public class StartUp {
 			}
 		}
 		
-		sc.close();
 	}
 
 }
