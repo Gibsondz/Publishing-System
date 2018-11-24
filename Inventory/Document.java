@@ -30,11 +30,6 @@ public class Document {
 		ID = iD;
 	}
 	
-	public String getTitle()
-	{
-		return title;
-	}
-	
 	public String getAuthor()
 	{
 		return author;

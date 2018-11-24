@@ -84,7 +84,7 @@ public class Inventory implements Subject {
 		return -1;
 	}
 
-	public ArrayList getInventory(){
+	public ArrayList<Document> getInventory(){
 		return inventory;
   }
 

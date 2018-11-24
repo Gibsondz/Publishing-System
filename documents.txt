@@ -1,2 +1,2 @@
-Cook Book;Jimmy Bob;12345
-Spice Is Life;Bonk Smonk;55555
+Cook Book;Jimmy Bob;12345;10
+Spice Is Life;Bonk Smonk;55555;20

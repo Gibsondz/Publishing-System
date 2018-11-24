@@ -54,7 +54,7 @@ public class StartUp {
 			}
 			else if(input.equals("2"))
 			{
-				UnregisteredBuyer unregisteredBuyer = new UnregisteredBuyer();
+				UnregisteredBuyer unregisteredBuyer = new UnregisteredBuyer(login);
 				unregisteredBuyer.selectDocument();
 			}
 			else

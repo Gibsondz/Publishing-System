@@ -3,6 +3,9 @@ package Login;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 /**
@@ -71,8 +74,8 @@ public class LoginServer {
 	
 	/**
 	 * checks to see if a user and password are in database
-	 * @param username
-	 * @param password
+	 * @param user
+	 * @param pass
 	 * @return the account from the database
 	 */
 	public Account validate(String user, String pass)
@@ -85,6 +88,23 @@ public class LoginServer {
 			}
 		}
 		return null;
+	}
+
+	public void createAccount(String user, String pass, String type){
+		Account newaccount = new Account(user,pass,type);
+		if(!accounts.add(newaccount)){
+			System.out.println("ERROR CREATING ACCOUNT");
+		}
+		try
+		{
+			String tofile = "\n" + user + " " + pass + " " + type;
+			Files.write(Paths.get("accounts.txt"), tofile.getBytes(), StandardOpenOption.APPEND);
+		}
+		catch (IOException e)
+		{
+			System.out.println("Error populating LoginServer");
+			e.printStackTrace();
+		}
 	}
 	
 }
