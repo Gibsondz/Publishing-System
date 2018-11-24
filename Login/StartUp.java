@@ -3,6 +3,7 @@ package Login;
 import java.util.Scanner;
 
 import Users.Operator;
+import Users.UnregisteredBuyer;
 
 /**
  * basic main function used by all starting users.
@@ -53,7 +54,8 @@ public class StartUp {
 			}
 			else if(input.equals("2"))
 			{
-				//launch guest buyer
+				UnregisteredBuyer unregisteredBuyer = new UnregisteredBuyer(login);
+				unregisteredBuyer.selectDocument();
 			}
 			else
 			{

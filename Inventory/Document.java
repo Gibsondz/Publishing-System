@@ -24,13 +24,10 @@ public class Document {
 		return ID;
 	}
 
+	public String getTitle() {return title;}
+
 	public void setID(String iD) {
 		ID = iD;
-	}
-	
-	public String getTitle()
-	{
-		return title;
 	}
 	
 	public String getAuthor()
