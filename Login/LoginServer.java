@@ -56,13 +56,16 @@ public class LoginServer {
 			{
 				String [] split = currentline.split(" ");
 				
-				if(split.length != 3)
+				if(split.length != 3 && split.length != 1)
 				{
 					System.out.println("Invalid amount of variables. Check your accounts.txt file");
 					System.exit(-1);
 				}
-				Account a = new Account(split[0], split[1], split[2]);
-				accounts.add(a);
+				if(split.length != 1)
+				{
+					Account a = new Account(split[0], split[1], split[2]);
+					accounts.add(a);
+				}
 			}
 			br.close();
 		} 
