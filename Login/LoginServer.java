@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.io.*; 
 
 /**
  * LoginServer class to help validate accounts and log people in.
@@ -106,5 +107,30 @@ public class LoginServer {
 			e.printStackTrace();
 		}
 	}
+	
+	//If the Guest decides to unregister delete account from the text file 
+	public void deleteAccount(String user, String pass, String type) throws IOException {
+		File inputFile = new File("accounts.txt");
+		File tempFile = new File("TempAccounts.txt");
+		System.out.println( user + " "+ pass + " "+ type);
+		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+		String lineToRemove =user +" "+ pass + " " + type;
+		String currentLine;
+		while((currentLine = reader.readLine()) != null) {
+		    // trim newline when comparing with lineToRemove
+		    String trimmedLine = currentLine.trim();
+		    if(trimmedLine.equals(lineToRemove)) continue;
+		    writer.write(currentLine + System.getProperty("line.separator"));
+		}
+		writer.close(); 
+		reader.close(); 
+		//inputFile.delete();
+        if (!inputFile.delete()) {
+            System.out.println("Could not delete file");
+        }
+		boolean successful = tempFile.renameTo(inputFile);
+	}
+	
 	
 }
