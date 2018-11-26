@@ -3,6 +3,7 @@ package Login;
 import java.util.Scanner;
 
 import Users.Operator;
+import Users.RegisteredBuyer;
 import Users.UnregisteredBuyer;
 
 /**
@@ -48,6 +49,12 @@ public class StartUp {
 					{
 						Operator operator = new Operator(user);
 						operator.run();
+					}else if(user.getType().equals("B")) {
+						RegisteredBuyer registerBuyer = new RegisteredBuyer(login,user); 
+						registerBuyer.selectDocument();
+						
+					}else {
+						System.out.println("Could not verify Account type");
 					}
 				}
 				
@@ -55,7 +62,7 @@ public class StartUp {
 			else if(input.equals("2"))
 			{
 				UnregisteredBuyer unregisteredBuyer = new UnregisteredBuyer(login);
-				unregisteredBuyer.selectDocument();
+				unregisteredBuyer.run();;
 			}
 			else
 			{
