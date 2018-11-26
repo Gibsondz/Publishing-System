@@ -99,11 +99,13 @@ public class Operator {
 		{
 			System.out.println("What would you like to change the Price to?");
 			input = sc.nextLine();
+			/*
 			if(!checkPriceForm(input))
 			{
 				System.out.println("Invalid input");
 				return;
 			}
+			*/
 			inventory.EditDocument(title, edit, input);
 		}
 		else
